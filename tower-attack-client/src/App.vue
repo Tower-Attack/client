@@ -3,7 +3,7 @@
 
     <!-- <MainComp></MainComp> -->
     <navHeader></navHeader>
-    <img src="./assets/logo.png">
+    <img src="https://thecinematicexperiance.files.wordpress.com/2015/02/the-lord-of-the-rings-2-the-two-towers-43.jpg" class='towerimg'>
     <router-view></router-view>
   </div>
 </template>
@@ -29,5 +29,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.tower {
+  width: 80vw;
+  height: 70vw
 }
 </style>

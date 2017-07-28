@@ -1,8 +1,8 @@
 <template>
   <div id="player">
-    <button type='submit' class='btn btn-lg btn-default '>Attack</button>
-    <button type='submit' class='btn btn-lg btn-default '>Special Attack</button>
-    <button type='submit' class='btn btn-lg btn-default '>Heal</button>
+    <button type='submit' class='btn btn-lg btn-default ' @click='attkBtn'>Attack</button>
+    <button type='submit' class='btn btn-lg btn-default ' @click='sattckBtn'>Special Attack</button>
+    <button type='submit' class='btn btn-lg btn-default ' @click='heal'>Heal</button>
     <h3>{{player.name}}</h3>
     <p>
       Player Health: {{health}}
@@ -14,7 +14,7 @@ import axios from 'axios'
 
 export default {
   name: "player",
-  props: ['health'],
+  props: ['health', 'attkBtn', 'sattckBtn', 'heal'],
   data ()  {
     return {
       API_URL: 'https://polar-shore-15070.herokuapp.com/',
