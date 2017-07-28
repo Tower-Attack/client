@@ -17,7 +17,7 @@ import tower from './towers/Tower'
 export default {
   data() {
     return {
-      message: 'Hello from main component',
+      message: 'Pick the Tower you would like to Attack!',
       API_URL: 'https://polar-shore-15070.herokuapp.com/',
       towers: []
     }
