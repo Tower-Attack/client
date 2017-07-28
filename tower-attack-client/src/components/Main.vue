@@ -2,29 +2,34 @@
   <div>
     <p>{{message}}</p>
 
-    <div class="btn-group-vertical" role="group" aria-label="...">
-      <button type="button" class="btn btn-default"><router-link to="/towerone">Attack Tower One!</router-link></button>
-      <button type="button" class="btn btn-default"><router-link to="/towertwo">Attack Tower Two!</router-link></button>
+    <div class="btn-group-vertical" role="group" aria-label="..." v-for="tower in towers">
+      <towerButton :tower='tower'></towerButton>
     </div>
-    <!-- <towerOne></towerOne> -->
-    <!-- <towerTwo></towerTwo> -->
   </div>
 </template>
 
 <script>
-import towerOne from './Towers/Towerone'
-import towerTwo from './Towers/towertwo'
+import axios from 'axios'
+import towerButton from './towers/towerButton.vue'
+import tower from './towers/Tower'
 
 
 export default {
   data() {
     return {
-      message: 'Hello from main component'
+      message: 'Hello from main component',
+      API_URL: 'https://polar-shore-15070.herokuapp.com/',
+      towers: []
     }
   },
   components: {
-    towerOne,
-    towerTwo
+    towerButton, tower
+  },
+  mounted () {
+    axios.get(`${this.API_URL}game`)
+      .then(res => {
+        this.towers = res.data;
+      })
   }
 }
 </script>

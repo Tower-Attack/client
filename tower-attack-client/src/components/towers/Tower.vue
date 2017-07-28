@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p>{{towerTwo}}</p>
+    <h1>{{$route.params.name}}</h1>
+    <p>Health: {{$route.params.health}}</p>
   </div>
 </template>
 
@@ -8,7 +9,12 @@
 export default {
   data () {
     return {
-      towerTwo: "This is tower two!"
+
+    }
+  },
+  methods: {
+    towerAttack () {
+      
     }
   }
 }
